@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "d8401728-2a5d-4c5d-8351-af4cb0a07e8e",
+  "alias": "EchoBotWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "d8401728-2a5d-4c5d-8351-af4cb0a07e8e",
+    "group": { "default": "Under Development" },
+    "title": { "default": "EchoBot" },
+    "description": { "default": "The EchoBot is a simple webpart sample that uses the Bot Framework WebChat component with back channel for context." },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "EchoBot"
+    }
+  }]
+}
