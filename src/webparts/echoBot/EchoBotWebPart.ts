@@ -6,21 +6,22 @@ import {
 } from '@microsoft/sp-webpart-base';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-import { App } from '../../BotFramework-WebChat/botchat';
+import { App } from 'botframework-webchat';
 import { DirectLine } from 'botframework-directlinejs';
-require('../../../src/BotFramework-WebChat/botchat.css');
+require('../../../node_modules/BotFramework-WebChat/botchat.css');
+import styles from './EchoBot.module.scss';
 import * as strings from 'echoBotStrings';
 import { IEchoBotWebPartProps } from './IEchoBotWebPartProps';
 
 export default class EchoBotWebPart extends BaseClientSideWebPart<IEchoBotWebPartProps> {
 
   public render(): void {
-    // Generate a random element id for the WebChat container
+    // Generate a random element id for the WebChat container...to support multiple webparts in one page
     var possible:string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var elementId:string = "";
     for(var i = 0; i < 5; i++)
       elementId += possible.charAt(Math.floor(Math.random() * possible.length));
-    this.domElement.innerHTML = '<div id="' + elementId + '"></div>';
+    this.domElement.innerHTML = `<div id="${elementId}" class="${styles.echobot}"></div>`;
 
     // Get userprofile from SharePoint REST endpoint
     var req = new XMLHttpRequest();
